@@ -13,7 +13,7 @@
 const promise = axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
 promise.then(function (response) {
-    console.log('Topics look like all good:',response.data.topics)
+    console.log('Topics look like all good:', response.data.topics)
     const topics = document.querySelector('.topics');
     response.data.topics.forEach(element => {
         const newtab = document.createElement('div');
@@ -24,4 +24,4 @@ promise.then(function (response) {
 
     
 })
-.catch(console.log('Error is', err))
+.catch(function (err) {console.log('Error is', err)})
